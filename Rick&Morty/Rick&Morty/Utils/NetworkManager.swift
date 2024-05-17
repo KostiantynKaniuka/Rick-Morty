@@ -8,8 +8,11 @@
 import Foundation
 import Combine
 
+protocol HTTPClientProtocol {
+    func getRequest<T: Decodable>(with url: URL, completion: @escaping (Result<T, Error>) -> Void)
+}
 
-final class NetworkManager {
+final class NetworkManager: HTTPClientProtocol {
     private var subscribers = Set<AnyCancellable>()
     
     private lazy var session: URLSession = {

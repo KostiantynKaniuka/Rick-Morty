@@ -14,7 +14,7 @@ private enum LoadingInitiator {
 }
 
 final class CharactersListViewModel {
-    private var networkManager: NetworkManager
+    private var networkManager: HTTPClientProtocol
     private var allCharacters = [Character]()
     private var loadingInitiator: LoadingInitiator = .initialStart // for managing loading indicators state
     private(set) var displayedCharacters = CurrentValueSubject<[Character], Never>([])
@@ -23,7 +23,7 @@ final class CharactersListViewModel {
     private(set) var listHeaderName = "Characters"
     
     
-    init(networkManager: NetworkManager) {
+    init(networkManager: HTTPClientProtocol) {
         self.networkManager = networkManager
     }
     
