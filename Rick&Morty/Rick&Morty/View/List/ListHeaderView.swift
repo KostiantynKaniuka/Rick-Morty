@@ -13,7 +13,7 @@ final class ListHeaderView: UITableViewHeaderFooterView {
     private let label: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 22, weight: .medium)
-        label.textColor = .black
+        label.textColor = .systemGray
         return label
     }()
         

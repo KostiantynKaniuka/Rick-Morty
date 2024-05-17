@@ -16,7 +16,7 @@ private enum LoadingInitiator {
 final class CharactersListViewModel {
     private var networkManager: HTTPClientProtocol
     private var allCharacters = [Character]()
-    private var loadingInitiator: LoadingInitiator = .initialStart // for managing loading indicators state
+    private var loadingInitiator: LoadingInitiator = .initialStart // for managing loading indicators state prevention of running both at same time
     private(set) var displayedCharacters = CurrentValueSubject<[Character], Never>([])
     private(set) var isLoading = PassthroughSubject<Bool, Never>()
     private(set) var fetchedError = PassthroughSubject<Error, Never>()
