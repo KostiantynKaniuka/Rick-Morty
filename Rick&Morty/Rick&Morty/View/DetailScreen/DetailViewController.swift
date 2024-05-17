@@ -10,10 +10,10 @@ import Kingfisher
 
 final class DetailViewController: UIViewController {
     
-    @IBOutlet weak var characterImage: UIImageView!
-    @IBOutlet weak var characterName: UILabel!
-    @IBOutlet weak var characterStatus: UILabel!
-    @IBOutlet weak var descriptionText: UITextView!
+    @IBOutlet private weak var characterImage: UIImageView!
+    @IBOutlet private weak var characterName: UILabel!
+    @IBOutlet private weak var characterStatus: UILabel!
+    @IBOutlet private weak var descriptionText: UITextView!
     
     private let viewModel: DetailViewModel
     
@@ -41,8 +41,7 @@ final class DetailViewController: UIViewController {
         characterName.text = viewModel.characterData.name
         characterStatus.text = viewModel.characterData.status
         descriptionText.text = "\(viewModel.characterData.gender) \n \(viewModel.characterData.type)"
-        ///
-        ///I didn't find the value with large descriptions of characters or ect., so just put only 2 vales
+        ///I didn't find the value with large descriptions in the documentation of characters or etc., so just put only 2 vales
         ///
         
         characterImage.layer.cornerRadius = 10

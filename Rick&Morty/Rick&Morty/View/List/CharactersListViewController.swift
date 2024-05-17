@@ -9,7 +9,7 @@ import UIKit
 import Combine
 
 final class CharactersListViewController: UIViewController, LoaderPresenting {
-    @IBOutlet weak var charactersTableView: UITableView!
+    @IBOutlet private weak var charactersTableView: UITableView!
     
     private let viewModel: CharactersListViewModel
     private var subscribers = Set<AnyCancellable>()
@@ -50,8 +50,6 @@ final class CharactersListViewController: UIViewController, LoaderPresenting {
                 }
                 self.showError(error as NSError)
             }.store(in: &subscribers)
-        
-        
         
         viewModel.isLoading
             .receive(on: DispatchQueue.main)

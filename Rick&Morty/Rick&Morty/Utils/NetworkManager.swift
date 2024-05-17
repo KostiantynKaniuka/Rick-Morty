@@ -11,13 +11,24 @@ import Combine
 
 final class NetworkManager {
     private var subscribers = Set<AnyCancellable>()
+    
+    private lazy var session: URLSession = {
+           let configuration = URLSessionConfiguration.default
+           configuration.requestCachePolicy = .reloadIgnoringLocalCacheData 
+           return URLSession(configuration: configuration)
+       }()
 
     func getRequest<T: Decodable>(with url: URL, completion: @escaping (Result<T, Error>) -> Void) {
         guard let urlComponents = URLComponents(string: url.absoluteString) else { return }
-        
-        URLSession.shared
+       
+        session
             .dataTaskPublisher(for: urlComponents.url!)
-            .map { $0.data }
+            .tryMap { data, response in
+                          guard let httpResponse = response as? HTTPURLResponse, (200..<300).contains(httpResponse.statusCode) else {
+                              throw URLError(.badServerResponse)
+                          }
+                          return data
+                      }
             .decode(type: T.self, decoder: JSONDecoder())
             .sink(receiveCompletion: { (response) in
                 switch response {
