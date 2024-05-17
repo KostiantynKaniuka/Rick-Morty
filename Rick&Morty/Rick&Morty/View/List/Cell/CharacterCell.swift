@@ -8,15 +8,12 @@
 import UIKit
 import Kingfisher
 
-class CharacterCell: UITableViewCell {
+final class CharacterCell: UITableViewCell {
     static let ListCellId = "characterID"
     
     @IBOutlet weak var characterImage: UIImageView!
-    
     @IBOutlet weak var characterName: UILabel!
-
     @IBOutlet weak var characterStatus: UILabel!
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()

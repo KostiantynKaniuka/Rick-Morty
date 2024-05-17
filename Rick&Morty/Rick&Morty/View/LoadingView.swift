@@ -15,8 +15,8 @@ final class LoadingView: UIView {
 
         var color: UIColor? {
             switch self {
-            case .solid: return .systemGreen
-            case .semiTransparent: return .systemGreen.withAlphaComponent(0.75)
+            case .solid: return .darkGray
+            case .semiTransparent: return .darkGray.withAlphaComponent(0.75)
             case .clear: return nil
             }
         }
@@ -57,8 +57,6 @@ final class LoadingView: UIView {
         NSLayoutConstraint.activate([
             activityIndicator.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             activityIndicator.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            activityIndicator.topAnchor.constraint(greaterThanOrEqualTo: self.topAnchor, constant: 8),
-            activityIndicator.bottomAnchor.constraint(greaterThanOrEqualTo: self.bottomAnchor, constant: 8)
         ])
     }
 }

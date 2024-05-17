@@ -19,19 +19,19 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5Zm-2W-LMP">
-                    <rect key="frame" x="16" y="139" width="361" height="659"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5Zm-2W-LMP">
+                    <rect key="frame" x="0.0" y="90" width="393" height="708"/>
+                    <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5Zm-2W-LMP" secondAttribute="trailing" constant="16" id="DZK-1A-I2J"/>
+                <constraint firstItem="5Zm-2W-LMP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="31" id="DCJ-Ae-FCC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5Zm-2W-LMP" secondAttribute="trailing" id="DZK-1A-I2J"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="5Zm-2W-LMP" secondAttribute="bottom" constant="20" id="WbK-ZJ-qQk"/>
-                <constraint firstItem="5Zm-2W-LMP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="fG8-gX-qrF"/>
-                <constraint firstItem="5Zm-2W-LMP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="80" id="jP2-Gb-psX"/>
+                <constraint firstItem="5Zm-2W-LMP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fG8-gX-qrF"/>
             </constraints>
             <point key="canvasLocation" x="130.53435114503816" y="-11.267605633802818"/>
         </view>

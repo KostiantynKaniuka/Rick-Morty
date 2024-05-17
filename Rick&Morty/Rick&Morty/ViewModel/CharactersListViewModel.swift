@@ -14,6 +14,7 @@ final class CharactersListViewModel {
     private(set) var displayedCharacters = CurrentValueSubject<[Character], Never>([])
     private(set) var isLoading = PassthroughSubject<Bool, Never>()
     private(set) var fetchedError = PassthroughSubject<Error, Never>()
+    private(set) var listHeaderName = "Characters"
     
     init(networkManager: NetworkManager) {
         self.networkManager = networkManager
@@ -28,17 +29,20 @@ final class CharactersListViewModel {
 private extension CharactersListViewModel {
     
     func fetchProducts() {
+        isLoading.send(true)
         let charactersURL = EndPoint.allCharacters.url
         networkManager.getRequest(with: charactersURL) { [weak self] (response: Result<Characters, Error>) in
             guard let self = self else {return}
             self.isLoading.send(false)
             switch response {
             case .success(let response):
+                self.isLoading.send(false)
                 self.allCharacters = response.results
                 self.displayedCharacters.send(self.allCharacters)
                 print("✅")
                 return
             case .failure(let error):
+                self.isLoading.send(false)
                 self.fetchedError.send(error)
                 print(error)
             }

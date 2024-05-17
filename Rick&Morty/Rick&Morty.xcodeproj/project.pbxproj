@@ -10,6 +10,8 @@
 		40D6DDA47D9BFB67FCAD9CB8 /* Pods_Rick_Morty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44D9AF59AB8E49C70C6CD64A /* Pods_Rick_Morty.framework */; };
 		E77BA4872BF77F7B0088CC06 /* LoaderPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77BA4862BF77F7B0088CC06 /* LoaderPresenting.swift */; };
 		E77BA4892BF77FA80088CC06 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77BA4882BF77FA80088CC06 /* LoadingView.swift */; };
+		E77BA48B2BF78AC20088CC06 /* ListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77BA48A2BF78AC20088CC06 /* ListHeaderView.swift */; };
+		E77BA48D2BF7973E0088CC06 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77BA48C2BF7973E0088CC06 /* DetailViewModel.swift */; };
 		E7B4AFD72BF758C400CFAC49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B4AFD62BF758C400CFAC49 /* AppDelegate.swift */; };
 		E7B4AFD92BF758C400CFAC49 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B4AFD82BF758C400CFAC49 /* SceneDelegate.swift */; };
 		E7B4AFDB2BF758C400CFAC49 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B4AFDA2BF758C400CFAC49 /* ViewController.swift */; };
@@ -34,6 +36,8 @@
 		AAA0888E36116A77E056A1DC /* Pods-Rick&Morty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rick&Morty.debug.xcconfig"; path = "Target Support Files/Pods-Rick&Morty/Pods-Rick&Morty.debug.xcconfig"; sourceTree = "<group>"; };
 		E77BA4862BF77F7B0088CC06 /* LoaderPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderPresenting.swift; sourceTree = "<group>"; };
 		E77BA4882BF77FA80088CC06 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		E77BA48A2BF78AC20088CC06 /* ListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHeaderView.swift; sourceTree = "<group>"; };
+		E77BA48C2BF7973E0088CC06 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		E7B4AFD32BF758C400CFAC49 /* Rick&Morty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rick&Morty.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7B4AFD62BF758C400CFAC49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7B4AFD82BF758C400CFAC49 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +78,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E77BA48E2BF797CB0088CC06 /* DetailScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E7F1BC0D2BF7607E006CF98A /* DetailViewController.swift */,
+				E7F1BC0E2BF7607E006CF98A /* DetailViewController.xib */,
+			);
+			path = DetailScreen;
+			sourceTree = "<group>";
+		};
+		E77BA48F2BF7983F0088CC06 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E7F1BC062BF75DB8006CF98A /* CharacterCell.swift */,
+				E7F1BC072BF75DB8006CF98A /* CharacterCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		E77BA4902BF7B2FC0088CC06 /* Protocol  */ = {
+			isa = PBXGroup;
+			children = (
+				E77BA4862BF77F7B0088CC06 /* LoaderPresenting.swift */,
+			);
+			path = "Protocol ";
+			sourceTree = "<group>";
+		};
 		E7B4AFCA2BF758C400CFAC49 = {
 			isa = PBXGroup;
 			children = (
@@ -95,17 +125,17 @@
 		E7B4AFD52BF758C400CFAC49 /* Rick&Morty */ = {
 			isa = PBXGroup;
 			children = (
+				E77BA4902BF7B2FC0088CC06 /* Protocol  */,
 				E7B4AFD82BF758C400CFAC49 /* SceneDelegate.swift */,
 				E7B4AFD62BF758C400CFAC49 /* AppDelegate.swift */,
-				E7F1BC1B2BF77453006CF98A /* ViewModel */,
 				E7F1BC1A2BF77440006CF98A /* Model */,
+				E7F1BC1B2BF77453006CF98A /* ViewModel */,
 				E7F1BC0C2BF76058006CF98A /* View */,
 				E7F1BC192BF7742D006CF98A /* Utils */,
 				E7B4AFDF2BF758C600CFAC49 /* Assets.xcassets */,
 				E7B4AFE12BF758C600CFAC49 /* LaunchScreen.storyboard */,
 				E7B4AFE42BF758C600CFAC49 /* Info.plist */,
 				E7F1BC0B2BF75DEE006CF98A /* Resource */,
-				E77BA4862BF77F7B0088CC06 /* LoaderPresenting.swift */,
 			);
 			path = "Rick&Morty";
 			sourceTree = "<group>";
@@ -114,9 +144,9 @@
 			isa = PBXGroup;
 			children = (
 				E7F1BC022BF75AF9006CF98A /* CharactersListViewController.swift */,
-				E7F1BC062BF75DB8006CF98A /* CharacterCell.swift */,
 				E7F1BC032BF75AF9006CF98A /* CharactersListViewController.xib */,
-				E7F1BC072BF75DB8006CF98A /* CharacterCell.xib */,
+				E77BA48F2BF7983F0088CC06 /* Cell */,
+				E77BA48A2BF78AC20088CC06 /* ListHeaderView.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -134,8 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				E7F1BC0A2BF75DC2006CF98A /* List */,
-				E7F1BC0D2BF7607E006CF98A /* DetailViewController.swift */,
-				E7F1BC0E2BF7607E006CF98A /* DetailViewController.xib */,
+				E77BA48E2BF797CB0088CC06 /* DetailScreen */,
 				E77BA4882BF77FA80088CC06 /* LoadingView.swift */,
 			);
 			path = View;
@@ -162,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				E7F1BC152BF7738D006CF98A /* CharactersListViewModel.swift */,
+				E77BA48C2BF7973E0088CC06 /* DetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -302,7 +332,9 @@
 				E7F1BC122BF77032006CF98A /* NetworkManager.swift in Sources */,
 				E7F1BC0F2BF7607E006CF98A /* DetailViewController.swift in Sources */,
 				E7B4AFD92BF758C400CFAC49 /* SceneDelegate.swift in Sources */,
+				E77BA48D2BF7973E0088CC06 /* DetailViewModel.swift in Sources */,
 				E7F1BC082BF75DB8006CF98A /* CharacterCell.swift in Sources */,
+				E77BA48B2BF78AC20088CC06 /* ListHeaderView.swift in Sources */,
 				E77BA4892BF77FA80088CC06 /* LoadingView.swift in Sources */,
 				E7F1BC142BF7708B006CF98A /* Model.swift in Sources */,
 			);
